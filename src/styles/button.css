@@ -1,0 +1,19 @@
+.game-button {
+  background: linear-gradient(145deg, #2a2a72, #009ffd);
+  border: 2px solid #00f7ff;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  margin: 10px 0;
+  cursor: pointer;
+  text-shadow: 0 0 8px #00f7ff;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  width: 200px;
+}
+
+.game-button:hover {
+  background: linear-gradient(145deg, #009ffd, #2a2a72);
+  transform: scale(1.05);
+}
