@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Title from "./components/Title";
 import Menu from "./components/Menu";
-//import Options from "./components/Options";
-//import SongSelect from "./components/SongSelect";
-//import Gameplay from "./components/GamePlay";
+import Options from "./components/Options";
+import SongSelect from "./components/SongSelect";
+import Gameplay from "./components/GamePlay";
 
 function App() {
   return (
@@ -13,9 +13,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Menu />} />
-          {/*<Route path="/options" element={<Options />} />
+          <Route path="/options" element={<Options />} />
           <Route path="/songselect" element={<SongSelect />} />
-          <Route path="/gameplay" element={<Gameplay />} />*/}
+          <Route path="/gameplay" element={<Gameplay />} />
         </Routes>
       </div>
     </Router>

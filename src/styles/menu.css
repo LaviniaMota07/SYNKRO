@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 .song-list-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
   max-width: 600px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .screen-title {
@@ -34,7 +37,7 @@
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Classe para o item de música selecionado, controlada pelo seu estado no React */
+
 .song-item.selected {
   border-color: var(--neon-blue);
   box-shadow: 0 0 10px var(--neon-blue);
@@ -42,6 +45,5 @@
 }
 
 .back-button {
-  /* Use os mesmos estilos do .menu-button do MainMenu.css */
   margin-top: 2rem;
 }
