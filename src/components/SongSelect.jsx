@@ -1,70 +1,63 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button.jsx";
 import "../styles/songselect.css";
 
 const SONGS = [
-  { id: "song-1", title: "Opção 1", cover: "", bestScore: 12340 },
-  { id: "song-2", title: "Opção 2", cover: "", bestScore: 9870 },
-  { id: "song-3", title: "Opção 3", cover: "", bestScore: 5430 },
-  { id: "song-4", title: "Opção 4", cover: "", bestScore: 0 },
-  { id: "song-5", title: "Opção 5", cover: "", bestScore: 21100 },
+  { id: "1", title: "Bilu Bilu", artist: "Pablo", score: 121743, accuracy: 63 },
+  { id: "2", title: "Can’t Remember to Forget You", artist: "Shakira", score: 110320, accuracy: 71 },
+  { id: "3", title: "Crime and Punishment", artist: "Ado", score: 98765, accuracy: 75 },
+  { id: "4", title: "Despacito", artist: "Luis Fonsi", score: 121743, accuracy: 63 },
+  { id: "5", title: "Evidências", artist: "Chitãozinho & Xororó", score: 117230, accuracy: 80 },
+  { id: "6", title: "Freesia", artist: "Naoki", score: 104000, accuracy: 69 },
+  { id: "7", title: "Promise", artist: "Laufey", score: 99200, accuracy: 73 },
 ];
 
 export default function SongSelect() {
-  const [selectedId, setSelectedId] = useState(SONGS[0].id);
-  const selected = SONGS.find(s => s.id === selectedId);
+  const [selected, setSelected] = useState(SONGS[3]);
 
   return (
-    <div className="songselect-page">
-      <h1 className="songselect-title">Rhythm Game</h1>
-      <h2 className="songselect-subtitle">Song Select</h2>
+    <div className="songselect-container">
+      <h1 className="songselect-header">LISTA DE MÚSICAS</h1>
 
-      <div className="songselect-layout">
-        <aside className="songselect-menu">
-          {SONGS.map(song => (
-            <Button
+      <div className="songselect-filters">
+        <button className="filter-btn active">POR ORDEM ALFABÉTICA</button>
+        <button className="filter-btn">POR ARTISTA</button>
+      </div>
+
+      <div className="songselect-content">
+        <div className="song-list">
+          {SONGS.map((song) => (
+            <div
               key={song.id}
-              text={song.title}
-              onClick={() => setSelectedId(song.id)}
-              className={song.id === selectedId ? "is-active" : ""}
-            />
-          ))}
-
-          <Link to="/"><Button text="Voltar" /></Link>
-        </aside>
-
-        <section className="songselect-preview">
-          {selected ? (
-            <>
-              <div className="song-card">
-                <img
-                  src={selected.cover}
-                  alt={`Capa ${selected.title}`}
-                  className="song-cover"
-                  onError={(e) => { e.currentTarget.src = "/covers/placeholder.jpg"; }}
-                />
-                <div className="song-info">
-                  <h3>{selected.title}</h3>
-                  <p className="score-label">Melhor pontuação</p>
-                  <p className="score-value">
-                    {selected.bestScore?.toLocaleString("pt-BR")} pts
-                  </p>
-                </div>
-              </div>
-
-              <div className="song-actions">
-                <Link to={`/gameplay`} state={{ songId: selected.id }}>
-                  <Button text="Jogar" />
-                </Link>
-              </div>
-            </>
-          ) : (
-            <div className="song-placeholder">
-              <p>Selecione uma música no menu ao lado.</p>
+              className={`song-item ${selected.id === song.id ? "active" : ""}`}
+              onClick={() => setSelected(song)}
+            >
+              {song.title.toUpperCase()} - {song.artist.toUpperCase()}
             </div>
-          )}
-        </section>
+          ))}
+          <Link to="/" className="back-btn">VOLTAR</Link>
+        </div>
+
+        <div className="song-details">
+          <img
+            src={selected.cover}
+            alt={selected.title}
+            className="song-cover"
+            onError={(e) => e.currentTarget.src = "/covers/placeholder.jpg"}
+          />
+          <h2 className="song-title">{selected.title}</h2>
+          <div className="song-stats">
+            <p><strong>PONTUAÇÃO</strong></p>
+            <p>{selected.score.toLocaleString("pt-BR")}</p>
+            <p><strong>PRECISÃO</strong></p>
+            <p>{selected.accuracy}%</p>
+          </div>
+          <div className="stars">
+            {Array(5).fill(0).map((_, i) => (
+              <span key={i} className={`star ${i < 3 ? "filled" : ""}`}>★</span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
