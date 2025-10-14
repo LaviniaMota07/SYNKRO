@@ -41,3 +41,43 @@ npm install
 
 # Inicie o servidor de desenvolvimento
 npm run dev
+```
+
+Acesse [http://localhost:5173](http://localhost:5173) para jogar!
+
+---
+
+## 🗂️ Estrutura
+
+```
+src/
+  components/    # Componentes React (Menu, SongSelect, Options, Gameplay)
+  styles/        # CSS modularizado por tela
+  assets/        # Imagens, sons, etc.
+public/
+  images/        # Capas dos álbuns
+```
+
+---
+
+## 🛠️ Tecnologias
+
+- React 19
+- Vite
+- React Router DOM
+- Godot Engine (WebAssembly)
+- CSS Neon/Gradiente
+
+---
+
+## 👨‍🎤 Créditos
+
+Feito com 💙 por estudantes apaixonados por música e tecnologia.
+
+---
+
+<div align="center">
+  <img src="public/synkro-logo.png" alt="SYNKRØ Logo" width="80"/>
+  <br>
+  <b>Let the rhythm guide you!</b>
+</div>
