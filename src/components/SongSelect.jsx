@@ -3,13 +3,62 @@ import { Link } from "react-router-dom";
 import "../styles/songselect.css";
 
 const SONGS = [
-  { id: "1", title: "Bilu Bilu", artist: "Pablo", score: 121743, accuracy: 63 },
-  { id: "2", title: "Can’t Remember to Forget You", artist: "Shakira", score: 110320, accuracy: 71 },
-  { id: "3", title: "Crime and Punishment", artist: "Ado", score: 98765, accuracy: 75 },
-  { id: "4", title: "Despacito", artist: "Luis Fonsi", score: 121743, accuracy: 63 },
-  { id: "5", title: "Evidências", artist: "Chitãozinho & Xororó", score: 117230, accuracy: 80 },
-  { id: "6", title: "Freesia", artist: "Naoki", score: 104000, accuracy: 69 },
-  { id: "7", title: "Promise", artist: "Laufey", score: 99200, accuracy: 73 },
+  {
+    id: "1",
+    title: "Bilu Bilu",
+    artist: "Pablo",
+    score: 121743,
+    accuracy: 63,
+    cover: "BiluBilu-album.jpg",
+  },
+  {
+    id: "2",
+    title: "Can’t Remember to Forget You",
+    artist: "Shakira",
+    score: 110320,
+    accuracy: 71,
+    cover: "CantRememberToForgetYou-album.jpg",
+  },
+  {
+    id: "3",
+    title: "Crime and Punishment",
+    artist: "Ado",
+    score: 98765,
+    accuracy: 75,
+    cover: "CrimeAndPunishment-album.jpg",
+  },
+  {
+    id: "4",
+    title: "Despacito",
+    artist: "Luis Fonsi",
+    score: 121743,
+    accuracy: 63,
+    cover: "Despacito-album.jpg",
+  },
+  {
+    id: "5",
+    title: "Evidências",
+    artist: "Chitãozinho & Xororó",
+    score: 117230,
+    accuracy: 80,
+    cover: "Evidencias-album.jpg",
+  },
+  {
+    id: "6",
+    title: "Freesia",
+    artist: "Naoki",
+    score: 104000,
+    accuracy: 69,
+    cover: "Freesia-album.jpg",
+  },
+  {
+    id: "7",
+    title: "Promise",
+    artist: "Laufey",
+    score: 99200,
+    accuracy: 73,
+    cover: "Promise-album.jpg",
+  },
 ];
 
 export default function SongSelect() {
@@ -35,27 +84,40 @@ export default function SongSelect() {
               {song.title.toUpperCase()} - {song.artist.toUpperCase()}
             </div>
           ))}
-          <Link to="/" className="back-btn">VOLTAR</Link>
+
+          <Link to="/" className="back-btn">
+            VOLTAR
+          </Link>
         </div>
 
         <div className="song-details">
           <img
-            src={selected.cover}
+            src={`/images/${selected.cover}`}
             alt={selected.title}
             className="song-cover"
-            onError={(e) => e.currentTarget.src = "/covers/placeholder.jpg"}
+            onError={(e) => (e.currentTarget.src = "/images/album.jpg")}
           />
           <h2 className="song-title">{selected.title}</h2>
+
           <div className="song-stats">
-            <p><strong>PONTUAÇÃO</strong></p>
+            <p>
+              <strong>PONTUAÇÃO</strong>
+            </p>
             <p>{selected.score.toLocaleString("pt-BR")}</p>
-            <p><strong>PRECISÃO</strong></p>
+            <p>
+              <strong>PRECISÃO</strong>
+            </p>
             <p>{selected.accuracy}%</p>
           </div>
+
           <div className="stars">
-            {Array(5).fill(0).map((_, i) => (
-              <span key={i} className={`star ${i < 3 ? "filled" : ""}`}>★</span>
-            ))}
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <span key={i} className={`star ${i < 3 ? "filled" : ""}`}>
+                  ★
+                </span>
+              ))}
           </div>
         </div>
       </div>
