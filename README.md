@@ -1,12 +1,43 @@
-# React + Vite
+<div align="center">
+  <img src="public/synkro-logo.png" alt="SYNKRØ Logo" width="120"/>
+  <h1>🎵 SYNKRØ - Rhythm Game 🎮</h1>
+  <p>
+    <b>O ritmo está em suas mãos!</b><br>
+    <img src="https://img.shields.io/badge/React-19.1.1-blue?logo=react" />
+    <img src="https://img.shields.io/badge/Vite-7.1.2-purple?logo=vite" />
+    <img src="https://img.shields.io/badge/Godot-Engine-0b1020?logo=godot-engine" />
+  </p>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📖 Sobre o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+SYNKRØ é um jogo de ritmo moderno, feito com [React](https://react.dev/) + [Vite](https://vitejs.dev/), que desafia seus reflexos e sua sincronia musical! Escolha sua música favorita, ajuste as opções gráficas e de áudio, e mergulhe em uma experiência visual neon inspirada nos melhores arcades.
 
-## Expanding the ESLint configuration
+> **Destaques:**
+> - 🎼 Seleção de músicas com capas e estatísticas
+> - ⚡ Interface estilizada com efeitos neon e gradientes
+> - 🕹️ Engine Godot integrada para gameplay fluido
+> - 🛠️ Painel de opções para personalizar gráficos, áudio e temas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🖼️ Screenshots
+
+<div align="center">
+  <img src="public/images/Despacito-album.jpg" alt="Despacito Album" width="180"/>
+  <img src="public/images/BiluBilu-album.jpg" alt="Bilu Bilu Album" width="180"/>
+  <img src="public/images/CrimeAndPunishment-album.jpg" alt="Crime and Punishment Album" width="180"/>
+</div>
+
+---
+
+## 🚀 Como Rodar
+
+```sh
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
